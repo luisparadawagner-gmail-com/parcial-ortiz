@@ -1,1 +1,70 @@
-<p>formulario-alumno works!</p>
+<form [formGroup]="alumnoForm" (ngSubmit)="submit()">
+  <div class="">
+    <mat-card class="container">
+      <mat-card-title>Cargar Alumno</mat-card-title>
+
+      <div class="container">
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre: </mat-label>
+          <input
+            type="text"
+            formControlName="nombre"
+            matInput
+            placeholder="Ignacio"
+          />
+        </mat-form-field>
+      </div>
+      <div class="container">
+        <mat-form-field class="example-full-width">
+          <mat-label>Apellido: </mat-label>
+          <input
+            type="text"
+            formControlName="apellido"
+            matInput
+            placeholder="Ortiz"
+          />
+        </mat-form-field>
+      </div>
+      <div class="container">
+        <mat-form-field class="example-full-width">
+          <mat-label>Edad: </mat-label>
+          <input
+            type="number"
+            formControlName="edad"
+            matInput
+            placeholder="23"
+          />
+        </mat-form-field>
+      </div>
+      <div class="container">
+        <mat-form-field class="example-full-width">
+          <mat-label>Materia: </mat-label>
+          <mat-select>
+            <mat-option
+              *ngFor="let materia of materias"
+              [value]="materia.value"
+            >
+              {{ materia.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="container">
+        <mat-form-field class="example-full-width">
+          <mat-label>Año de Cursada: </mat-label>
+          <input
+            type="text"
+            formControlName="anoCursada"
+            matInput
+            placeholder="Cuarto"
+          />
+        </mat-form-field>
+      </div>
+      <mat-card-actions>
+        <div>
+          <button mat-raised-button color="primary">Guardar</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</form>
