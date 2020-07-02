@@ -1,3 +1,19 @@
-<app-formulario-alumno></app-formulario-alumno>
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button
+    mat-menu-item
+    routerLink="/formulario-alumno-component"
+    routerLinkActive="active"
+  >
+    Formulario Alumno
+  </button>
+  <button
+    mat-menu-item
+    routerLink="/tabla-alumno-component"
+    routerLinkActive="active"
+  >
+    Tabla Alumnos
+  </button>
+</mat-menu>
 
 <router-outlet></router-outlet>
